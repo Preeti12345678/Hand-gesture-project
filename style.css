@@ -1,0 +1,39 @@
+body{
+    background:linear-gradient(rgb(90, 112, 10), greenyellow);
+    color: white;
+
+}
+#result, #camera{
+    border: 2px dashed white;
+    width: 350px;
+    height: 300px;
+}
+label{
+    font-size: 14px;
+    color:white ;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: rgb(111, 103, 224);
+}
+button{
+    background-color: rgb(111, 103, 224)!important;
+    font-weight: bolder;
+}
+.heading{
+    background-color:rgb(111, 103, 224);
+    font-size: 18px;
+    border-radius: 10px;
+    letter-spacing: 10px;
+    width: 400px;
+    height: 100px;
+    padding-top: 10px;
+  }
+span{
+  font-size: 30px;
+}
+.gesture_name{
+  font-size: 40px;
+}
+.gesture{
+  font-size:48px;
+}
