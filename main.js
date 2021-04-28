@@ -1,3 +1,4 @@
+Gesture_name="";
 Webcam.set({
     width:350,
     height:300,
@@ -18,3 +19,32 @@ classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/x
 function modelLoaded(){
     console.log("model Loaded");
 }
+function check(){
+  img=document.getElementById('captured_img');
+  classifier.classify(img, gotResult)
+}
+ function gotResult(error,results){
+   if(error){
+     console.error(error);
+   }
+   else{
+    console.log(results);
+    document.getElementById("gesture_name").innerHTML=results[0].label;
+    Gesture_name=results[0].label;
+    if(results[0].label=="Yes great!"){
+      document.getElementById("gesture").innerHTML="&#128077";
+    }
+    if(results[0].label=="Victory"){
+      document.getElementById("gesture").innerHTML="&#x270C";
+    }
+    if(results[0].label=="Amazing"){
+      document.getElementById("gesture").innerHTML="&#128076";
+    }
+    if(results[0].label=="No thank you"){
+      document.getElementById("gesture").innerHTML="&#128078";
+    }
+    if(results[0].label=="Greetings!"){
+      document.getElementById("gesture").innerHTML="&#128406";
+    }
+   }
+ }
