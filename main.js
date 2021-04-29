@@ -19,6 +19,12 @@ classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/x
 function modelLoaded(){
     console.log("model Loaded");
 }
+function speak(){
+  synth=window.speechSynthesis;
+  speak_data="The hand gesture means "+Gesture_name;
+  utterThis=new SpeechSynthesisUtterance(speak_data)
+  synth.speak(utterThis);
+}
 function check(){
   img=document.getElementById('captured_img');
   classifier.classify(img, gotResult)
@@ -31,6 +37,7 @@ function check(){
     console.log(results);
     document.getElementById("gesture_name").innerHTML=results[0].label;
     Gesture_name=results[0].label;
+    speak();
     if(results[0].label=="Yes great!"){
       document.getElementById("gesture").innerHTML="&#128077";
     }
